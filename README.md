@@ -45,7 +45,7 @@ The following steps needs to be done once for the mobile and once for the wear p
 2. Create a proxy service that extends EventbusDataLayerProxyService
 3. Add a service block for the proxy service in the AndroidManifest.xml file
 4. Add the eventbus_wear to the gradle build file for both the mobile & wear projects
-   4. compile project(':eventbus_wear')
+   4.1 compile project(':eventbus_wear')
 
 
 #### Proxy service ####
