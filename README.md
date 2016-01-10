@@ -151,11 +151,13 @@ public class MyProxyService extends EventbusDataLayerProxyService {
 
 ```
 #!xml
-
+    <application>
+...
         <service android:name=".service.MyProxyService" >
             <intent-filter>
                 <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
             </intent-filter>
         </service>
-
+    </application>
+</manifest>
 ```
