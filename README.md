@@ -122,8 +122,8 @@ import de.greenrobot.event.EventBus;
 /**
  * This service listens to data from the mobile device.
  */
-public class MyService extends EventbusDataLayerProxyService {
-    private static final String TAG = "MyService";
+public class MyProxyService extends EventbusDataLayerProxyService {
+    private static final String TAG = "MyProxyService";
 
     @Override
     public void onCreate() {
