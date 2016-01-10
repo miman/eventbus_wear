@@ -107,6 +107,36 @@ public class MyGateway extends EventbusDataLayerGateway {
 
 ```
 
+#### Service example ####
+
+
+```
+#!java
+
+package eu.miman.eventbuswear.example.service;
+
+import android.util.Log;
+import eu.miman.util.eventbus.wear.EventbusDataLayerProxyService;
+import de.greenrobot.event.EventBus;
+
+/**
+ * This service listens to data from the mobile device.
+ */
+public class MyService extends EventbusDataLayerProxyService {
+    private static final String TAG = "MyService";
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Log.d(TAG, "Created");
+
+        handleMessageClass(SettingsChangedEvent.class, true, false, false);
+        EventBus.getDefault().register(this);
+    }
+}
+
+```
+
 #### Example of service block in AndroidManifest.xml ####
 
 
