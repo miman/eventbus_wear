@@ -80,6 +80,8 @@ The gateway listens to the events that should be routed to the other device. It 
 
 ## Examples ##
 
+In the example files here below the producer sends an SettingsChangesEvent and the consumer receives this event.
+
 #### Gateway class example ####
 
 ```
