@@ -10,7 +10,7 @@ Using this you can work with the Greenrobot eventbus on both sides without havin
 
 ## Summary of set up ##
 
-To use this library you need to copy the code to your Android project and add the project to your *settings.gradle* file.
+To use this library you need to copy the code to your Android project and add the project to your ***settings.gradle*** file.
 
 Ex: 
 ```
