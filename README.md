@@ -45,7 +45,60 @@ The following steps needs to be done once for the mobile and once for the wear p
 2. Create a proxy service that extends EventbusDataLayerProxyService
 3. Add a service block for the proxy service in the AndroidManifest.xml file
 
+
+### Do the following for each new event ###
+
+1. Create Event class to be used
+
+#### In the device that sends the event ####
+2. Add an onEvent in the gateway class and call one of the 4 send/sync functions in the parent class.
+
+#### In the device that receives the event ####
+2. Add a class to handle in the proxy service class's onCreate function using the handleMessageClass-function
+
+## Examples ##
+
 #### Gateway class example ####
+
+```
+#!java
+
+
+package eu.miman.eventbuswear.example.service;
+
+import android.content.Context;
+import android.util.Log;
+
+import eu.miman.util.eventbus.wear.EventbusDataLayerGateway;
+
+import de.greenrobot.event.EventBus;
+
+/**
+ * This Gateway is used to send data to the phone/wear device.
+ */
+public class MyGateway extends EventbusDataLayerGateway {
+    private static final String TAG = "MyGateway";
+
+    public MyGateway(Context parentContext) {
+        super(parentContext);
+        EventBus.getDefault().register(this);
+    }
+
+    public void onDestroy() {
+        Log.v(TAG, "Destroyed");
+    }
+
+    /**
+     * Example eventbus event handler
+     * @param event
+     */
+    public void onEvent(SettingsChangedEvent event) {
+        Log.d(TAG, "SettingsChangedEvent received");
+        sendToDeviceAlways(event);
+    }
+}
+
+```
 
 #### Example of service block in AndroidManifest.xml ####
 
@@ -53,16 +106,10 @@ The following steps needs to be done once for the mobile and once for the wear p
 ```
 #!xml
 
-        <service android:name=".service.HeartbeatDataService" >
+        <service android:name=".service.MyProxyService" >
             <intent-filter>
                 <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
             </intent-filter>
         </service>
 
 ```
-
-
-### Do the following for each new event ###
-
-1. Create Event class to be used
-2. 
