@@ -1,10 +1,16 @@
 # README #
 
+# Who should use this library? #
+
+You should use this library if you (like me) really like the [Greenrobot eventbus](https://github.com/greenrobot/EventBus) concept and are using it throughout you android application and now want to extend your mobile application with an Android wear application.
+
 # What is this repository for? #
 
-An Android library used to hide the complexity for communication  between a phone and an Android wear watch.
+This Android library is used to hide the complexity of communication between a phone and an Android wear watch.
 
 Using this you can work with the [Greenrobot eventbus](https://github.com/greenrobot/EventBus) on both sides without having to worry about the phone <-> wear communication.
+
+You post an event on the EventBus on the sender side (mobile or watch) and get the event in the onEvent function on your other device, just as you would within your application.
 
 # How do I get set up? #
 
