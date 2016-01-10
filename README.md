@@ -45,6 +45,13 @@ The following steps needs to be done once for the mobile and once for the wear p
 2. Create a proxy service that extends EventbusDataLayerProxyService
 3. Add a service block for the proxy service in the AndroidManifest.xml file
 
+#### Proxy service ####
+
+The proxy service listens to incoming messages and will parse & resend these on the local eventbus on the phone or wear device.
+
+#### Gateway ####
+
+The gateway listens to the events that should be routed to the other device. It will then use the send/sync functions to send these to the other device.
 
 ### Do the following for each new event ###
 
