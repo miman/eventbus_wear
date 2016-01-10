@@ -4,7 +4,7 @@
 
 An Android library used to hide the complexity for communication  between a phone and an Android wear watch.
 
-Using this you can work with the Greenrobot eventbus on both sides without having to worry about the phone <-> wear communication.
+Using this you can work with the [Greenrobot eventbus](https://github.com/greenrobot/EventBus) on both sides without having to worry about the phone <-> wear communication.
 
 # How do I get set up? #
 
