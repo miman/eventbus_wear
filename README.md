@@ -22,3 +22,15 @@ include ':mobile', ':wear', ':eventbus_wear'
 
 
 ## Dependencies ##
+
+This library works together with the Greenrobot eventbus concept, so your mobile & wear projects should import the latest version of this library.
+
+It also uses the gson library for the data transfer.
+
+```
+#!gradle
+
+    compile 'com.google.code.gson:gson:2.3.1'
+    compile 'de.greenrobot:eventbus:2.4.0'
+
+```
