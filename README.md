@@ -34,3 +34,35 @@ It also uses the gson library for the data transfer.
     compile 'de.greenrobot:eventbus:2.4.0'
 
 ```
+
+## Steps to do for a new event to be transferred between phone & wear device ##
+
+### Once per mobile/wear application ###
+
+The following steps needs to be done once for the mobile and once for the wear projects.
+
+1. Create a gateway class which extends EventbusDataLayerGateway
+2. Create a proxy service that extends EventbusDataLayerProxyService
+3. Add a service block for the proxy service in the AndroidManifest.xml file
+
+#### Gateway class example ####
+
+#### Example of service block in AndroidManifest.xml ####
+
+
+```
+#!xml
+
+        <service android:name=".service.HeartbeatDataService" >
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
+            </intent-filter>
+        </service>
+
+```
+
+
+### Do the following for each new event ###
+
+1. Create Event class to be used
+2. 
